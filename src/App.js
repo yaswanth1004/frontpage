@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navbar, Nav, Modal, Carousel, Card, Button, Container } from 'react-bootstrap';
+import { Navbar, Nav, Modal, Carousel, Card, Button, Container, Row, Col } from 'react-bootstrap';
 import './App.css';
 import LoginModal from './components/LoginModal';
 import SignUp from './components/SignUp';
@@ -59,7 +59,7 @@ function App() {
     {
       id: 1,
       title: 'The Batman',
-      description:<b>Action/Thriller</b>,
+      description: <b>Action/Thriller</b>,
       image: 'https://drive.google.com/uc?id=152vcpDOoZepazHxGR-Agn0Cvq2QFC7o-',
     },
     {
@@ -73,44 +73,43 @@ function App() {
       title: 'The Winter Soldier',
       description: <b>Action/Adventure/Fantasy</b>,
       image: 'https://drive.google.com/uc?id=1MejtUaZl4WJX-88aPZLwxu2Zv3mNwrFx',
-      width:190,
-      height:281
+      width: 190,
+      height: 281
     },
     {
       id: 4,
       title: 'Salaar',
       description: <b>Action/Thriller</b>,
       image: 'https://drive.google.com/uc?id=1O6K6Dnp0hgC8flktAChtnEQTxV0UsB04',
-      width:190 ,
-      height:281
+      width: 190,
+      height: 281
     },
     {
       id: 5,
       title: 'Jersey',
-      description:<b>Action/Drama/Sports</b>,
+      description: <b>Action/Drama/Sports</b>,
       image: 'https://drive.google.com/uc?id=1INAISvdxnuK4utEfuApHeC2yfKSKEdZj',
     },
-    
     // Your small cards data...
   ];
 
   return (
     <div>
       <Navbar bg="dark" expand="lg" variant="dark">
-  <Navbar.Brand href="#home">SHOWTIME SQUAD</Navbar.Brand>
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  <Navbar.Collapse id="basic-navbar-nav">
-    <div className="ml-auto d-flex align-items-center">
-      <Nav.Link onClick={handleLoginClick}>
-        <Button variant="primary">Login</Button>
-      </Nav.Link>
-      <span className="mx-2"></span> {/* Optional: Separating line */}
-      <Nav.Link onClick={handleSignupClick}>
-        <Button variant="success">Sign Up</Button>
-      </Nav.Link>
-    </div>
-  </Navbar.Collapse>
-</Navbar>
+        <Navbar.Brand href="#home">SHOWTIME SQUAD</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <div className="ml-auto d-flex align-items-center">
+            <Nav.Link onClick={handleLoginClick}>
+              <Button variant="primary">Login</Button>
+            </Nav.Link>
+            <span className="mx-2"></span> {/* Optional: Separating line */}
+            <Nav.Link onClick={handleSignupClick}>
+              <Button variant="success">Sign Up</Button>
+            </Nav.Link>
+          </div>
+        </Navbar.Collapse>
+      </Navbar>
 
       <Container fluid>
         <div className="main-content">
@@ -136,23 +135,23 @@ function App() {
         <p style={{ textAlign: 'center', margin: '20px 0', fontWeight: 'bold' }}>ON SCREEN</p>
 
         <div className="d-flex flex-nowrap overflow-auto">
-  {smallCards.map((card) => (
-    <Card key={card.id} style={{ width: '16rem', margin: '8px' }}>
-      <div style={{ width: '100%', height: '25rem', overflow: 'hidden' }}>
-        <Card.Img
-          variant="top"
-          src={card.image}
-          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-        />
-      </div>
-      <Card.Body>
-        <Card.Title>{card.title}</Card.Title>
-        <Card.Text>{card.description}</Card.Text>
-        <Button variant="primary" onClick={handleLoginClick}>BOOK NOW</Button>
-      </Card.Body>
-    </Card>
-  ))}
-</div>
+          {smallCards.map((card) => (
+            <Card key={card.id} style={{ width: '16rem', margin: '8px' }}>
+              <div style={{ width: '100%', height: '25rem', overflow: 'hidden' }}>
+                <Card.Img
+                  variant="top"
+                  src={card.image}
+                  style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                />
+              </div>
+              <Card.Body>
+                <Card.Title>{card.title}</Card.Title>
+                <Card.Text>{card.description}</Card.Text>
+                <Button variant="primary" onClick={handleLoginClick}>BOOK NOW</Button>
+              </Card.Body>
+            </Card>
+          ))}
+        </div>
       </Container>
 
       <footer style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#f5deb3' }}>
